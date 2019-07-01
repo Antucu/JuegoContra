@@ -16,7 +16,13 @@ _global_script_class_icons={
 [application]
 
 config/name="Nuevo proyecto de juego"
+run/main_scene="res://Scenas/MainContra.tscn"
 config/icon="res://icon.png"
+
+[layer_names]
+
+2d_physics/layer_1="General"
+2d_physics/layer_2="Plataformas"
 
 [rendering]
 

@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Script/Player/player.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Contra.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 630, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 133, 10 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 11.06, 16.3199 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 10.9229, 16.6759 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 91.6299, 10 )
+
+[node name="Contra" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 541, 526 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 666, 388 )
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( 190.464, 134.975 )
+collision_mask = 3
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="KinematicBody2D"]
+texture = ExtResource( 2 )
+vframes = 3
+hframes = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( -7.9364, 2.44196 )
+shape = SubResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="KinematicBody2D"]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/Area2D"]
+position = Vector2( -7.72304, 2.51448 )
+shape = SubResource( 5 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2( 416.105, 415.243 )
+mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource( 4 )
+[connection signal="body_exited" from="KinematicBody2D/Area2D" to="KinematicBody2D" method="_on_Area2D_body_exited"]
