@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Nuevo proyecto de juego"
+config/name="ContraRemaster"
 run/main_scene="res://Scenas/MainContra.tscn"
 config/icon="res://icon.png"
 
