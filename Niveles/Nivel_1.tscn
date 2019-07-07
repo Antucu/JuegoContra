@@ -1,16 +1,21 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://TileSet/nuevo_terreno.tres" type="TileSet" id=1]
 [ext_resource path="res://Niveles/Spawn1.gd" type="Script" id=2]
 [ext_resource path="res://Enemigos/EnemigoSuicida.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Niveles/EnemigoFranco.gd" type="Script" id=4]
 [ext_resource path="res://sprites/NES_contra_enemies.png" type="Texture" id=5]
+[ext_resource path="res://Perphraps/PlayerUp.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Script/Escenas/Spawn.gd" type="Script" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 19.1212 )
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 455.396
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 57.4113, 294.48 )
 
 [node name="Jungle" type="Node2D" groups=[
 "nivel1",
@@ -439,6 +444,20 @@ position = Vector2( 12.5117, -17.0615 )
 [node name="Timer" type="Timer" parent="SpawnEnimigoFanco/EnemigoFranco"]
 wait_time = 5.0
 autostart = true
+
+[node name="PlayerUp" parent="." instance=ExtResource( 6 )]
+position = Vector2( 154.417, 54.1092 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 245.74, 214.41 )
+script = ExtResource( 7 )
+npc = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="Position2D"]
+gravity_point = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Position2D/Area2D"]
+shape = SubResource( 3 )
 [connection signal="timeout" from="SpansEnemigosCaminantes/Spawn24/Timer" to="SpansEnemigosCaminantes/Spawn24" method="_on_Timer_timeout"]
 [connection signal="timeout" from="SpansEnemigosCaminantes/Spawn23/Timer" to="SpansEnemigosCaminantes/Spawn23" method="_on_Timer_timeout"]
 [connection signal="timeout" from="SpansEnemigosCaminantes/Spawn22/Timer" to="SpansEnemigosCaminantes/Spawn22" method="_on_Timer_timeout"]
@@ -464,3 +483,4 @@ autostart = true
 [connection signal="timeout" from="SpansEnemigosCaminantes/Spawn2/Timer" to="SpansEnemigosCaminantes/Spawn2" method="_on_Timer_timeout"]
 [connection signal="timeout" from="SpansEnemigosCaminantes/Spawn1/Timer" to="SpansEnemigosCaminantes/Spawn1" method="_on_Timer_timeout"]
 [connection signal="timeout" from="SpawnEnimigoFanco/EnemigoFranco/Timer" to="SpawnEnimigoFanco/EnemigoFranco" method="_on_Timer_timeout"]
+[connection signal="body_entered" from="Position2D/Area2D" to="Position2D" method="_on_Area2D_body_entered"]

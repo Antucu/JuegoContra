@@ -1,14 +1,16 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Script/Player/player.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Player/Idle3.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Player/run3.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Player/Idle1.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Player/idle2.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Player/jump.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Player/run.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Player/atackrun.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Player/run2.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Player/run3.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Player/Idle3.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Player/jump.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Player/run.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Player/atackrun.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Player/run2.png" type="Texture" id=9]
+
+[sub_resource type="RectangleShape2D" id=24]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 33.1674, 16.305 )
@@ -301,7 +303,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 2 ) ]
+"values": [ ExtResource( 5 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Sprite:hframes")
@@ -697,7 +699,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.01 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 2 ), ExtResource( 2 ) ]
+"values": [ ExtResource( 5 ), ExtResource( 5 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Sprite:hframes")
@@ -824,7 +826,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ), ExtResource( 5 ) ]
+"values": [ ExtResource( 6 ), ExtResource( 6 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Sprite:hframes")
@@ -947,7 +949,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 6 ) ]
+"values": [ ExtResource( 7 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Sprite:hframes")
@@ -1074,7 +1076,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 7 ), ExtResource( 7 ) ]
+"values": [ ExtResource( 8 ), ExtResource( 8 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Sprite:hframes")
@@ -1201,7 +1203,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ), ExtResource( 8 ) ]
+"values": [ ExtResource( 9 ), ExtResource( 9 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Sprite:hframes")
@@ -1328,7 +1330,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 9 ), ExtResource( 9 ) ]
+"values": [ ExtResource( 2 ), ExtResource( 2 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Sprite:hframes")
@@ -1361,10 +1363,10 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 1.54 ), Vector2( 0, 1.54 ) ]
+"values": [ Vector2( 0, 1.54 ), Vector2( 0, 1.54 ), Vector2( 0, 1.54 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("CollisionShape2D:rotation_degrees")
@@ -1373,10 +1375,10 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, 0.0 ]
+"values": [ 0.0, 0.0, 0.0 ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("CollisionShape2D:shape")
@@ -1385,10 +1387,10 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ SubResource( 19 ), SubResource( 19 ) ]
+"values": [ SubResource( 19 ), SubResource( 19 ), SubResource( 19 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("CollisionShape2D:shape:extents")
@@ -1397,10 +1399,10 @@ tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 15.816, 33.975 ), Vector2( 15.816, 33.975 ) ]
+"values": [ Vector2( 15.816, 33.975 ), Vector2( 15.816, 33.975 ), Vector2( 15.816, 33.975 ) ]
 }
 tracks/9/type = "value"
 tracks/9/path = NodePath("CollisionShape2D:shape:custom_solver_bias")
@@ -1409,14 +1411,15 @@ tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, 0.0 ]
+"values": [ 0.0, 0.0, 0.0 ]
 }
 
-[node name="PlayerUp" type="KinematicBody2D"]
-position = Vector2( 357.464, 209.779 )
+[node name="PlayerUp" type="KinematicBody2D" groups=[
+"player",
+]]
 collision_mask = 3
 script = ExtResource( 1 )
 __meta__ = {
@@ -1424,13 +1427,14 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -10.5 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
-hframes = 2
+hframes = 3
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 4.8 )
+position = Vector2( 0, 1.54 )
+shape = SubResource( 24 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/atk1 = SubResource( 3 )
@@ -1451,4 +1455,9 @@ one_shot = true
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 20, 0 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+drag_margin_top = 0.69
+editor_draw_drag_margin = true
 [connection signal="timeout" from="ratAtk" to="." method="_on_ratAtk_timeout"]

@@ -46,8 +46,14 @@ func _physics_process(delta):
 		if (atk==true and Input.is_action_pressed("atk") and Input.is_action_pressed("ui_down")):
 			if(is_on_floor() and  animPlayer.current_animation=="run"):
 				animPlayer.play("runatk2")
+				if (get_node("CollisionShape2D")!=null):
+					get_node("CollisionShape2D").get_shape().extents.x=15.816
+					get_node("CollisionShape2D").get_shape().extents.y=33.875
 			if(is_on_floor() and animPlayer.is_playing()==false):
 				animPlayer.play("runatk2")
+				if (get_node("CollisionShape2D")!=null):
+					get_node("CollisionShape2D").get_shape().extents.x=15.816
+					get_node("CollisionShape2D").get_shape().extents.y=33.875
 			get_node("Position2D").rotation_degrees=45
 		if (is_on_floor() and  animPlayer.is_playing()==false and Input.is_action_pressed("atk")==false):
 			animPlayer.play("run")
@@ -67,8 +73,14 @@ func _physics_process(delta):
 		if (atk==true and Input.is_action_pressed("atk") and Input.is_action_pressed("ui_up")):
 			if(is_on_floor() and animPlayer.current_animation=="run"):
 				animPlayer.play("runatk1")
+				if (get_node("CollisionShape2D")!=null):
+					get_node("CollisionShape2D").get_shape().extents.x=15.816
+					get_node("CollisionShape2D").get_shape().extents.y=33.875
 			if(is_on_floor() and animPlayer.is_playing()==false):
 				animPlayer.play("runatk1")
+				if (get_node("CollisionShape2D")!=null):
+					get_node("CollisionShape2D").get_shape().extents.x=15.816
+					get_node("CollisionShape2D").get_shape().extents.y=33.875
 			get_node("Position2D").rotation_degrees=225
 		if (atk==true and Input.is_action_pressed("atk") and Input.is_action_pressed("ui_down")):
 			if(is_on_floor() and animPlayer.current_animation=="run"):
@@ -148,7 +160,6 @@ func _physics_process(delta):
 		if (animPlayer!=null and animPlayer.is_playing()==false):
 			animPlayer.play("jump")
 		
-	
 	var movimineto=VelocidadPlayer*delta
 	move_and_slide(movimineto, Vector2(0,-1))
 	#####Esto es para atacar
