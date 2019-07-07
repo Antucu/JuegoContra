@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Script/Player/player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Contra.png" type="Texture" id=2]
-[ext_resource path="res://Perphraps/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Perphraps/PlayerUp.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 630, 10 )
@@ -67,10 +67,5 @@ shape = SubResource( 5 )
 one_way_collision = true
 one_way_collision_margin = 17.0
 
-[node name="Player" parent="." instance=ExtResource( 3 )]
-
-[node name="Area2D" parent="Player" index="3"]
-editor/display_folded = true
+[node name="PlayerUp" parent="." instance=ExtResource( 3 )]
 [connection signal="body_exited" from="KinematicBody2D/Area2D" to="KinematicBody2D" method="_on_Area2D_body_exited"]
-
-[editable path="Player"]
