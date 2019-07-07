@@ -18,7 +18,6 @@ func _process(delta):
 	var movimiento = velocidad * delta
 	move_and_slide(movimiento)
 	
-	
 
 
 func _on_Timer_timeout():
